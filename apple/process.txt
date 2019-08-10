@@ -1,0 +1,56 @@
+1. Run
+	exp build:ios
+	Build the app by letting expo do all the settings
+
+	Remove the distribution - push certificate and the provisioning profile, keep the App ID.
+
+(cd c:\OpenSSL-Win64\bin)
+
+2. Create the request
+	- create the key
+	.\openssl genrsa -out strollingaround.key 2048
+	- create the request
+	.\openssl req -new -key strollingaround.key -out strollingaround.certSigningRequest -subj "/emailAddress=vasilios.moissidis@gmail.com, CN=Vasiliios Moissidis, C=GR"
+
+3. Create certificate 
+	- select the Production App Store and Ad Hoc option.
+	- upload request strollingaround.certSigningRequest
+	- download certificate 
+	- rename to strollingaround.cer 
+
+4. Edit App ID
+	- enable push  notifications
+	- create push certificate
+	- upload request strollingaround.certSigningRequest
+	- download the certificate
+	- rename it to strollingaroundpush.cer
+
+(-. Add devices UDID if you have not done that already)
+
+
+5. Create provisioning profile 
+	- select Ad Hoc option.
+	- select the strollingaround.cer certificate you created above
+	- select the devices you want it to run on
+	-
+
+6. Create p12 file
+	.\openssl x509 -in strollingaround.cer -inform DER -out strollingaround.pem -outform PEM
+	.\openssl pkcs12 -export -inkey strollingaround.key -in strollingaround.pem -out strollingaround.p12
+
+	.\openssl x509 -in strollingaroundpush.cer -inform DER -out strollingaroundpush.pem -outform PEM
+	.\openssl pkcs12 -export -inkey strollingaround.key -in strollingaroundpush.pem -out strollingaroundpush.p12
+
+	password: bmoy
+
+7. Move the created files in the /expo projects/(project)/apple folder
+	strollingaround.p12
+	strollingaroundpush.p12
+	strollingaround.mobileprovision
+8. Run
+	exp build:ios -c
+	- ? How would you like to upload your credentials?
+ 	    I will provide all the credentials and files needed, Expo does limited validation
+	- Upload p12 file ./apple/strollingaround.p12
+	- Upload p12 file ./apple/strollingaroundpush.p12
+	- Upload provisioning file ./apple/strollingaround.mobileprovision

@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "strolling-around-thessaloniki",
+    "slug": "strolling-around-thessaloniki",
+    "privacy": "public",
+    "sdkVersion": "34.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "eu.strollingaround.thessaloniki",
+      "config": {
+        "googleMapsApiKey": "AIzaSyCA64vczvUpclrqyeW_l2hZZZUQAA5v654"
+      }
+    },
+    "android": {
+      "package": "eu.strollingaround.thessaloniki",
+      "versionCode": 3,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCA64vczvUpclrqyeW_l2hZZZUQAA5v654"
+        }
+      },
+      "permissions": [
+        "LOCATION"
+      ]
+    }
+  }
+}
