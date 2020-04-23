@@ -359,14 +359,3 @@ const styles = StyleSheet.create({
   },
 });
 
-/*
-<View style={styles.description2}>
-<WebView
-source={{ html: "<head><link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'><style>body {font-family: 'Didact Gothic';font-size: 22px;}</style></head><head><link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'><style>body { font-family: 'Didact Gothic';font-size: 16px;}</style></head><p style='text-align: justify; padding:10;'>"+info[mKey].description+"</p>" }}
-/>
-</View>
-
-<Text style={styles.description}>
-  {language==='gr'?info[mKey].gr.description:info[mKey].en.description}
-</Text>
-*/

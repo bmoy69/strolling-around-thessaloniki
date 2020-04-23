@@ -1,5 +1,5 @@
 import React from 'react';
-import { WebView, Linking, StyleSheet, View, TouchableOpacity, Text, Image, FlatList, Modal, TouchableHighlight, ScrollView } from 'react-native';
+import { Linking, StyleSheet, View, TouchableOpacity, Text, Image, FlatList, Modal, TouchableHighlight, ScrollView } from 'react-native';
 import { Ionicons, Feather, MaterialIcons } from '@expo/vector-icons';
 import HTML from 'react-native-render-html';
 import { Audio } from 'expo-av';
