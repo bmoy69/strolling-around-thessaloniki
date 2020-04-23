@@ -1,5 +1,6 @@
 Delete package-lock.json if no installation is made.
 Refresh cache : expo start -c
 
-searchable-flatlist Delete the node_modules within the searchable-flatlist package
-npm install react-native-render-html react-native-phone-call greek-utils react-native-slider geolib react-native-webview
+npm install react-native-render-html react-native-phone-call greek-utils react-native-slider geolib react-native-webview --save
+
+In node_modules\searchable-flatlist: Delete node_modules
