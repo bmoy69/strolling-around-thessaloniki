@@ -46,7 +46,7 @@ export default class MapScreen extends React.Component {
       radius: INITIAL_RADIUS,
       filteredBy : null,
       modalVisible: false,
-      path: null
+      path: null,
     }
   }
 
@@ -79,6 +79,7 @@ export default class MapScreen extends React.Component {
     );
   }
   
+
   filterTheMap = (category, path) => {
     const showAll = path || this.state.radius > MAX_RADIUS;
     let tempMarkers = [];
@@ -169,7 +170,7 @@ export default class MapScreen extends React.Component {
               coordinate={marker.coordinates}
               title={language==='gr'?marker.title:marker.titleEN}
               description={
-                language==='gr'?'Περισσότερα...':'More...'
+                language==='gr'?`Απόσταση: ${getDistance(this.state.location.coords,marker.coordinates)}m - Περισσότερα...`:`Distance: ${getDistance(this.state.location.coords,marker.coordinates)}m - More...`
               }
               onCalloutPress={() => this.showThisMonument(marker.key)}
               image={marker.marker}
